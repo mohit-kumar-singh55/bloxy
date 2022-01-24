@@ -1,12 +1,8 @@
 import Head from 'next/head';
 import { PostCard, PostWidget, Categories } from '../components';
+import { getPosts } from "../services"
 
-const posts = [
-  { title: "React", excerpt: "Learning React Teasting" },
-  { title: "React with Tailwind", excerpt: "Learning React with Tailwind" },
-]
-
-export default function Home() {
+export default function Home({ posts }) {
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>
@@ -30,4 +26,13 @@ export default function Home() {
       </div>
     </div>
   )
+}
+
+// NextJS way of calling apis after the rendering
+export async function getStaticProps() {
+  const posts = (await getPosts()) || [];
+
+  return {
+    props: { posts }
+  }
 }

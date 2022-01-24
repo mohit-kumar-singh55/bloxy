@@ -63,3 +63,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: 'Ethnocentric Rg';
+  src: url('../ethnocentric-rg.ttf') format('truetype');
+}
+
+.custom-header{
+  font-family: 'Ethnocentric Rg', sans-serif !important;
+}
