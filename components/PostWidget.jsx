@@ -17,8 +17,6 @@ function PostWidget({ categories, slug }) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [slug]);
 
-    console.log(relatedPosts);
-
     return (
         <div className='custom-bg shadow-lg rounded-lg p-8 mb-8'>
             <h3 className='text-xl mb-8 font-semibold border-b border-blue-400 pb-4'>
