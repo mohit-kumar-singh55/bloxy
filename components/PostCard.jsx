@@ -17,7 +17,7 @@ function PostCard({ post }) {
             <div className="block text-gray-300 lg:flex text-center items-center justify-center mb-8 w-full">
                 <div className="flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8">
                     <Image src={post.author.photo.url} alt={post.author.name} height="30px" width="30px" className='align-middle rounded-full' />
-                    <p className='inline align-middle ml-2 text-lg'>{post.author.name}</p>
+                    <p className='inline align-middle ml-2 text-lg custom-mks'>{post.author.name}</p>
                 </div>
                 <div className="font-medium">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline mr-2 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
