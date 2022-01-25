@@ -14,7 +14,7 @@ function PostCard({ post }) {
                     {post.title}
                 </Link>
             </h1>
-            <div className="block lg:flex text-center items-center justify-center mb-8 w-full">
+            <div className="block text-gray-300 lg:flex text-center items-center justify-center mb-8 w-full">
                 <div className="flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8">
                     <Image src={post.author.photo.url} alt={post.author.name} height="30px" width="30px" className='align-middle rounded-full' />
                     <p className='inline align-middle ml-2 text-lg'>{post.author.name}</p>
