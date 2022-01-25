@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { getPosts, getPostDetails } from "../../services";
 import { PostDetail, Categories, PostWidget, Author, Comments, CommentsForm } from "../../components";
 
 function PostDetails({ post }) {
+    useEffect(() => {
+        document.title = `${post.title} | Bloxy`;
+    }, [post])
+
     return (
         <div className='container mx-auto px-10 mb-8'>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">

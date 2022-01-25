@@ -3,6 +3,47 @@ import Image from 'next/image';
 import moment from 'moment';
 
 function PostDetail({ post }) {
+    const getContentFragment = (index, text, obj, type) => {
+        let modifiedText = text;
+
+        if (obj) {
+            if (obj.bold) {
+                modifiedText = (<b key={index}>{text}</b>);
+            }
+
+            if (obj.italic) {
+                modifiedText = (<em key={index}>{text}</em>);
+            }
+
+            if (obj.underline) {
+                modifiedText = (<u key={index}>{text}</u>);
+            }
+        }
+
+        switch (type) {
+            case 'heading-three':
+                return <h3 key={index} className="text-xl font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>;
+            case 'paragraph':
+                return <p key={index} className="mb-8">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>;
+            case 'heading-four':
+                return <h4 key={index} className="text-md font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
+            case 'link':
+                return <a target="_blank" key={index} className="font-semibold">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</a>;
+            case 'image':
+                return (
+                    <Image
+                        key={index}
+                        alt={obj.title}
+                        height={obj.height}
+                        width={obj.width}
+                        src={obj.src}
+                    />
+                );
+            default:
+                return modifiedText;
+        }
+    };
+
     return (
         <div className='shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-12 custom-bg'>
             <div className="relative overflow-hidden shadow-md pb-80 mb-6">
@@ -21,6 +62,13 @@ function PostDetail({ post }) {
                         <span className="align-middle">{moment(post.createdAt).format('DD MMM YYYY')}</span>
                     </div>
                 </div>
+                <h1 className="mb-8 text-3xl font-semibold">{post.title}</h1>
+                {console.log(post.content.raw)}
+                {post.content.raw.children.map((typeObj, index) => {
+                    const children = typeObj.children.map((item, itemIndex) => getContentFragment(itemIndex, item.text, item));
+
+                    return getContentFragment(index, children, typeObj, typeObj.type);
+                })}
             </div>
         </div>
     );
