@@ -1,11 +1,18 @@
 import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { getPosts, getPostDetails } from "../../services";
-import { PostDetail, Categories, PostWidget, Author, Comments, CommentsForm } from "../../components";
+import { PostDetail, Categories, PostWidget, Author, Comments, CommentsForm, Loader } from "../../components";
 
 function PostDetails({ post }) {
+    const router = useRouter();
+
     useEffect(() => {
         document.title = `${post.title} | Bloxy`;
     }, [post])
+
+    if (router.isFallback) {
+        return <Loader />
+    }
 
     return (
         <div className='container mx-auto px-10 mb-8'>
@@ -38,11 +45,11 @@ export async function getStaticProps({ params }) {
     }
 }
 
-export async function getStaticPaths({ params }) {
+export async function getStaticPaths() {
     const posts = await getPosts();
 
     return {
         paths: posts.map(({ node: { slug } }) => ({ params: { slug } })),
-        fallback: false,
+        fallback: true,
     }
 }
