@@ -1,0 +1,3 @@
+User-Agent: *
+Disallow:
+Sitemap: https://mks-bloxy.netlify.app/sitemap.xml
