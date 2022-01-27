@@ -47,12 +47,12 @@ function PostDetail({ post }) {
     return (
         <div className='shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-12 custom-bg'>
             <div className="relative overflow-hidden shadow-md pb-80 mb-6">
-                <Image src={post.featuredImage.url} alt={post.title} className="object-top absolute h-full w-full object-cover  shadow-lg rounded-t-lg lg:rounded-lg" layout='fill' />
+                <Image src={post.featuredImage.url} alt={post.title || "Title"} className="object-top absolute h-full w-full object-cover  shadow-lg rounded-t-lg lg:rounded-lg" layout='fill' />
             </div>
             <div className="px-4 lg:px-0">
                 <div className="flex items-center mb-8 w-full">
                     <div className="flex items-center mb-4 lg:mb-0 w-full lg:w-auto mr-8">
-                        <Image src={post.author.photo.url} alt={post.author.name} height="30px" width="30px" className='align-middle rounded-full' />
+                        <Image src={post.author.photo.url} alt="MKS" height="30px" width="30px" className='align-middle rounded-full' />
                         <p className='inline align-middle ml-2 text-lg custom-mks'>{post.author.name}</p>
                     </div>
                     <div className="font-medium">

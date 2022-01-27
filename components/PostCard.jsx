@@ -7,16 +7,16 @@ function PostCard({ post }) {
     return (
         <div className='shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-12 custom-bg'>
             <div className="relative overflow-hidden shadow-md pb-80 mb-6">
-                <Image src={post.featuredImage.url} alt={post.title} className="object-top absolute h-80 w-full object-cover  shadow-lg rounded-t-lg lg:rounded-lg" layout='fill' />
+                <Image src={post.featuredImage.url} alt={post.title || "Title"} className="object-top absolute h-80 w-full object-cover  shadow-lg rounded-t-lg lg:rounded-lg" layout='fill' />
             </div>
-            <h1 className='text-center mb-8 cursor-pointer text-3xl font-semibold custom-title'>
+            <h2 className='text-center mb-8 cursor-pointer text-3xl font-semibold custom-title'>
                 <Link href={`/post/${post.slug}`} passHref>
                     {post.title}
                 </Link>
-            </h1>
+            </h2>
             <div className="block text-gray-300 lg:flex text-center items-center justify-center mb-8 w-full">
                 <div className="flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8">
-                    <Image src={post.author.photo.url} alt={post.author.name} height="30px" width="30px" className='align-middle rounded-full' />
+                    <Image src={post.author.photo.url} alt="MKS" height="30px" width="30px" className='align-middle rounded-full' />
                     <p className='inline align-middle ml-2 text-lg custom-mks'>{post.author.name}</p>
                 </div>
                 <div className="font-medium">
