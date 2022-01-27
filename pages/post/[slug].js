@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { getPosts, getPostDetails } from "../../services";
-import { PostDetail, Categories, PostWidget, Author, Comments, CommentsForm, Loader } from "../../components";
+import { PostDetail, Categories, PostWidget, Author, Comments, CommentsForm, Loader, SocialMedia } from "../../components";
 
 function PostDetails({ post }) {
     const router = useRouter();
@@ -27,6 +27,7 @@ function PostDetails({ post }) {
                     <div className="relative lg:sticky top-8">
                         <PostWidget slug={post.slug} categories={post.categories.map((category) => category.slug)} />
                         <Categories />
+                        <SocialMedia />
                     </div>
                 </div>
             </div>
