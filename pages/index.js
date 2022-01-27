@@ -7,8 +7,9 @@ export default function Home({ posts }) {
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>
-        <title>Bloxy</title>
+        <title>Bloxy | A personalized blog with different categories</title>
         <meta name="description" content="A personalized blog with different categories like Travel, Development, etc." />
+        <meta httpEquiv='content-language' content='en-gb'></meta>
         <meta name="google-site-verification" content="lh7ARYc9HW3MOvB_7blCI7eh2-cs3EuVbHrH6N3B5Q4" />
         <meta name="msvalidate.01" content="DFDFB514A2B89406795311540E50E883" />
         <link rel="icon" href="/favicon.ico" />

@@ -7,7 +7,7 @@ function PostDetails({ post }) {
     const router = useRouter();
 
     useEffect(() => {
-        document.title = `${post.title} | Bloxy`;
+        document.title = `${post.title} | Bloxy - A personalized blog`;
     }, [post])
 
     if (router.isFallback) {
