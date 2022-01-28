@@ -27,8 +27,6 @@ function PostDetail({ post }) {
                 return <p key={index} className="mb-8">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>;
             case 'heading-four':
                 return <h4 key={index} className="text-md font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
-            case 'link':
-                return <a target="_blank" key={index} className="font-semibold">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</a>;
             case 'image':
                 return (
                     <Image
