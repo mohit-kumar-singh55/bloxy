@@ -55,7 +55,7 @@ function CommentsForm({ slug }) {
             <div className="grid grid-cols-1 gap-4 mb-4">
                 <textarea
                     ref={commentEl}
-                    className="p-4 outline-none rounded-lg w-full focus:ring-2 focus:ring-gray-200 bg-gray-300 text-gray-900"
+                    className="p-4 resize-none outline-none rounded-lg w-full focus:ring-2 focus:ring-gray-200 bg-gray-300 text-gray-900"
                     placeholder='Comment'
                     name="comment" />
             </div>
