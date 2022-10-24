@@ -42,6 +42,8 @@ function PostDetail({ post }) {
         }
     };
 
+    console.log('ooo ->', post.content.raw);
+
     return (
         <div className='shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-12 custom-bg'>
             <div className="relative overflow-hidden shadow-md pb-80 mb-6">
